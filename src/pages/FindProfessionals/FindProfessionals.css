@@ -189,12 +189,19 @@
 
 .pro-card__specs {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: var(--space-1.5);
   margin-bottom: var(--space-6);
-  min-height: 64px; /* Ensure 2 lines of specs have plenty of room to wrap */
-  align-content: flex-start;
-  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: var(--space-1);
+  min-height: 32px;
+  /* Hide scrollbar for standard browsers */
+  scrollbar-width: none; 
+}
+
+.pro-card__specs::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
 }
 
 .pro-card__actions {
