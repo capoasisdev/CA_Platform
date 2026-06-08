@@ -123,6 +123,7 @@
   align-items: flex-start;
   gap: var(--space-4);
   margin-bottom: var(--space-4);
+  min-height: 80px; /* Ensure uniform header alignment */
 }
 
 .pro-card__identity {
@@ -140,6 +141,7 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   margin: var(--space-1) 0;
+  min-height: 20px;
 }
 
 .pro-card__country {
@@ -178,7 +180,7 @@
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   margin-bottom: var(--space-4);
-  flex: 1;
+  min-height: 60px; /* Lock bio height */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -190,8 +192,12 @@
   flex-wrap: wrap;
   gap: var(--space-1.5);
   margin-bottom: var(--space-6);
+  min-height: 54px; /* Lock tags container height to fit up to 2 lines neatly */
+  align-content: flex-start;
 }
 
 .pro-card__actions {
   margin-top: auto;
+  display: flex;
+  gap: var(--space-2);
 }
