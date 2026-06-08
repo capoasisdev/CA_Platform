@@ -2,12 +2,15 @@
 
 /* ── Hero ──────────────────────────────────────────────────── */
 .hero {
-  background-color: var(--color-surface);
+  background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
-  padding: var(--space-24) 0 var(--space-20);
+  padding: var(--space-32) 0 var(--space-24);
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.02) 0%, transparent 40%);
 }
 
 .hero::before {
@@ -23,34 +26,35 @@
 .hero__label {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-1) var(--space-3);
-  background-color: var(--color-primary-50);
-  border: 1px solid var(--color-primary-100);
+  gap: var(--space-2.5);
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-primary);
-  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
+  box-shadow: var(--shadow-xs);
 }
 
 .hero__label-dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background-color: var(--color-primary);
+  background-color: var(--color-success);
 }
 
 .hero__title {
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-primary);
-  line-height: var(--line-height-tight);
-  letter-spacing: var(--letter-spacing-tight);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
   margin-bottom: var(--space-6);
-  max-width: 820px;
+  max-width: 880px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -60,20 +64,20 @@
 }
 
 .hero__subtitle {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto var(--space-10);
+  font-weight: var(--font-weight-regular);
 }
 
 .hero__ctas {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-3);
+  gap: var(--space-4);
   flex-wrap: wrap;
-  margin-bottom: var(--space-12);
 }
 
 /* ── How It Works ──────────────────────────────────────────── */
