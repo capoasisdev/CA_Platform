@@ -192,8 +192,9 @@
   flex-wrap: wrap;
   gap: var(--space-1.5);
   margin-bottom: var(--space-6);
-  min-height: 54px; /* Lock tags container height to fit up to 2 lines neatly */
+  min-height: 64px; /* Ensure 2 lines of specs have plenty of room to wrap */
   align-content: flex-start;
+  overflow: hidden;
 }
 
 .pro-card__actions {
