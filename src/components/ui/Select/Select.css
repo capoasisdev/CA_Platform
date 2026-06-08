@@ -1,0 +1,64 @@
+/* Select Component */
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.select-group__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.select-group__label--required::after {
+  content: ' *';
+  color: var(--color-danger);
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-field {
+  width: 100%;
+  padding: var(--space-2) var(--space-8) var(--space-2) var(--space-3);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-base);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  height: 40px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.select-field:hover:not(:disabled) {
+  border-color: var(--color-border-strong);
+}
+
+.select-field:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: var(--shadow-focus);
+}
+
+.select-field--error {
+  border-color: var(--color-danger);
+}
+
+.select-wrapper__chevron {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-text-tertiary);
+  display: flex;
+}
+
+.select-group__error {
+  font-size: var(--font-size-xs);
+  color: var(--color-danger);
+}

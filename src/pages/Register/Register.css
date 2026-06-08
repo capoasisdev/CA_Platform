@@ -1,0 +1,112 @@
+/* Register Page */
+.register-type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.register-type-card {
+  padding: var(--space-5);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color var(--transition-base), background-color var(--transition-base);
+  text-align: center;
+  background-color: var(--color-surface);
+}
+
+.register-type-card--selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-50);
+}
+
+.register-type-card__icon {
+  font-size: 28px;
+  margin-bottom: var(--space-2);
+}
+
+.register-type-card__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.register-type-card__desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.register-type-card--selected .register-type-card__label {
+  color: var(--color-primary);
+}
+
+.register-step-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.register-step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-border-strong);
+  transition: background-color var(--transition-base), transform var(--transition-base);
+}
+
+.register-step-dot--active {
+  background-color: var(--color-primary);
+  transform: scale(1.4);
+}
+
+.register-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.register-terms__checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.register-terms__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.register-terms__text a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.register-terms__text a:hover {
+  text-decoration: underline;
+}
+
+.register-back-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0;
+  transition: color var(--transition-fast);
+  margin-bottom: var(--space-4);
+}
+
+.register-back-btn:hover {
+  color: var(--color-text-primary);
+}

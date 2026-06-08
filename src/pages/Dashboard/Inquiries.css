@@ -1,0 +1,40 @@
+/* Dashboard Inquiries styles */
+
+.inquiries-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.inquiry-detail-modal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.inquiry-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.inquiry-detail-row label {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.inquiry-detail-row p, .inquiry-detail-row div {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  padding: var(--space-3);
+  border-radius: var(--radius-base);
+  border: 1px solid var(--color-border);
+}
+
+.inquiry-detail-row .inquiry-message {
+  white-space: pre-wrap;
+  min-height: 100px;
+}
