@@ -23,29 +23,6 @@
   background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
 }
 
-.hero__label {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2.5);
-  padding: var(--space-2) var(--space-4);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border-strong);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-secondary);
-  letter-spacing: var(--letter-spacing-wider);
-  text-transform: uppercase;
-  margin-bottom: var(--space-6);
-  box-shadow: var(--shadow-xs);
-}
-
-.hero__label-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--color-success);
-}
 
 .hero__title {
   font-size: var(--font-size-5xl);

@@ -68,10 +68,6 @@ const Home = () => {
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="hero" aria-labelledby="hero-title">
         <div className="container">
-          <div className="hero__label">
-            <span className="hero__label-dot" aria-hidden="true" />
-            Connecting 6 countries worldwide
-          </div>
           <h1 className="hero__title" id="hero-title">
             The World's ONLY Network of{' '}
             <span className="hero__title-accent">Financial Professionals</span>
