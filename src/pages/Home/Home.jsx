@@ -14,7 +14,8 @@ import {
   DocIcon,
   BriefcaseIcon,
   ScaleIcon,
-  ChartIcon
+  ChartIcon,
+  UserIcon
 } from '../../components/ui';
 import { ROUTES } from '../../constants/routes';
 import {
@@ -130,13 +131,24 @@ const Home = () => {
             aria-labelledby={`tab-${activeTab}`}
             className="how-it-works__steps"
           >
-            {steps.map((step) => (
-              <div key={step.step} className="how-it-works__step">
-                <div className="how-it-works__step-number" aria-hidden="true">{step.step}</div>
-                <h3 className="how-it-works__step-title">{step.title}</h3>
-                <p className="how-it-works__step-desc">{step.description}</p>
-              </div>
-            ))}
+            {steps.map((step, index) => {
+              // Select icons to visually represent each step
+              const stepIcons = activeTab === 'client' 
+                ? [<DocIcon size={32} />, <SearchIcon size={32} />, <HandshakeIcon size={32} />]
+                : [<UserIcon size={32} />, <GlobeIcon size={32} />, <ChartIcon size={32} />];
+              return (
+                <div key={step.step} className="how-it-works__step">
+                  <div className="how-it-works__step-visual">
+                    <div className="how-it-works__step-icon-bubble">
+                      {stepIcons[index] || <DocIcon size={32} />}
+                    </div>
+                    <div className="how-it-works__step-number" aria-hidden="true">{step.step}</div>
+                  </div>
+                  <h3 className="how-it-works__step-title">{step.title}</h3>
+                  <p className="how-it-works__step-desc">{step.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
