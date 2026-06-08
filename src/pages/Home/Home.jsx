@@ -69,10 +69,10 @@ const Home = () => {
         <div className="container">
           <div className="hero__label">
             <span className="hero__label-dot" aria-hidden="true" />
-            Now serving 85+ countries worldwide
+            Connecting 6 countries worldwide
           </div>
           <h1 className="hero__title" id="hero-title">
-            The World's Largest Network of{' '}
+            The World's ONLY Network of{' '}
             <span className="hero__title-accent">Financial Professionals</span>
           </h1>
           <p className="hero__subtitle">
@@ -85,19 +85,6 @@ const Home = () => {
             <Button as="a" href={ROUTES.REGISTER} variant="secondary" size="lg">
               Join as Professional
             </Button>
-          </div>
-
-          {/* Trust stats */}
-          <div className="hero__trust" role="list">
-            {STATS.map((stat, i) => (
-              <>
-                {i > 0 && <div key={`div-${i}`} className="hero__trust-divider" aria-hidden="true" />}
-                <div key={stat.label} className="hero__trust-item" role="listitem">
-                  <div className="hero__trust-value">{stat.value}</div>
-                  <div className="hero__trust-label">{stat.label}</div>
-                </div>
-              </>
-            ))}
           </div>
         </div>
       </section>
