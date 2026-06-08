@@ -177,64 +177,6 @@ const Profile = () => {
     }
   };
 
-  if (role === 'client') {
-    return (
-      <div className="saved-experts-container">
-        <Card>
-          <Card.Header>
-            <Card.Title>Saved Experts</Card.Title>
-            <p style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', marginTop: 'var(--space-1)' }}>
-              Manage and quickly consult the verified professionals you have saved to your corporate network.
-            </p>
-          </Card.Header>
-          <Card.Body>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-              {SAVED_EXPERTS.map((expert) => (
-                <div 
-                  key={expert.id} 
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: 'var(--space-4)',
-                    border: '1px solid var(--color-border)',
-                    borderRadius: 'var(--radius-md)',
-                    backgroundColor: 'var(--color-bg)'
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
-                    <Avatar name={expert.name} size="md" />
-                    <div>
-                      <h4 style={{ margin: 0, color: 'var(--color-text-primary)', fontWeight: 'var(--font-weight-semibold)' }}>{expert.name}</h4>
-                      <p style={{ margin: 'var(--space-1) 0', fontSize: 'var(--font-size-sm)', color: 'var(--color-text-secondary)' }}>
-                        {expert.designation} &middot; {expert.country}
-                      </p>
-                      <div style={{ display: 'flex', gap: 'var(--space-2)', marginTop: 'var(--space-2)' }}>
-                        {expert.specializations.map((spec) => (
-                          <Badge key={spec} variant="primary">{spec}</Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 'var(--space-2)' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-1)', fontSize: 'var(--font-size-sm)', color: 'var(--color-text-primary)' }}>
-                      <StarIcon size={16} style={{ color: 'var(--color-warning)' }} />
-                      <strong>{expert.rating.toFixed(1)}</strong>
-                      <span style={{ color: 'var(--color-text-secondary)' }}>({expert.reviews} reviews)</span>
-                    </div>
-                    <Button variant="outline" size="sm">
-                      Request Consultation
-                    </Button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Card.Body>
-        </Card>
-      </div>
-    );
-  }
-
   return (
     <div className="profile-editor-container">
       <Card>

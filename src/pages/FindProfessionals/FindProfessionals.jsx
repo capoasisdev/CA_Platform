@@ -72,12 +72,57 @@ const FindProfessionals = () => {
   const [selectedCountry, setSelectedCountry] = useState('');
   const [activeSpec, setActiveSpec] = useState('');
   
+  // Saved experts tracking state
+  const [savedIds, setSavedIds] = useState([]);
+
   // Modal State
   const [selectedPro, setSelectedPro] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [messageText, setMessageText] = useState('');
   const [isSending, setIsSending] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
+
+  const loadSavedExperts = async () => {
+    if (!user) return;
+    try {
+      const { data, error } = await supabase
+        .from('saved_experts')
+        .select('professional_id')
+        .eq('client_id', user.id);
+      if (error) throw error;
+      setSavedIds(data?.map(d => d.professional_id) || []);
+    } catch (err) {
+      console.warn('Could not load saved experts', err);
+    }
+  };
+
+  const handleToggleSave = async (proId) => {
+    if (!user) {
+      alert("Please log in to save professionals to your network.");
+      return;
+    }
+
+    const isSaved = savedIds.includes(proId);
+    try {
+      if (isSaved) {
+        const { error } = await supabase
+          .from('saved_experts')
+          .delete()
+          .eq('client_id', user.id)
+          .eq('professional_id', proId);
+        if (error) throw error;
+        setSavedIds(prev => prev.filter(id => id !== proId));
+      } else {
+        const { error } = await supabase
+          .from('saved_experts')
+          .insert({ client_id: user.id, professional_id: proId });
+        if (error) throw error;
+        setSavedIds(prev => [...prev, proId]);
+      }
+    } catch (err) {
+      console.error('Error toggling saved expert:', err.message);
+    }
+  };
 
   const loadProfessionals = async () => {
     setLoading(true);
@@ -103,7 +148,8 @@ const FindProfessionals = () => {
 
   useEffect(() => {
     loadProfessionals();
-  }, []);
+    loadSavedExperts();
+  }, [user]);
 
   const handleOpenContact = (pro) => {
     setSelectedPro(pro);
@@ -254,8 +300,16 @@ const FindProfessionals = () => {
                         ))}
                       </div>
 
-                      <div className="pro-card__actions">
-                        <Button variant="primary" fullWidth onClick={() => handleOpenContact(pro)}>
+                      <div className="pro-card__actions" style={{ display: 'flex', gap: 'var(--space-2)' }}>
+                        <Button 
+                          variant={savedIds.includes(pro.id) ? "success" : "outline"} 
+                          onClick={() => handleToggleSave(pro.id)}
+                          style={{ minWidth: '44px', padding: '0' }}
+                          title={savedIds.includes(pro.id) ? "Saved" : "Save Professional"}
+                        >
+                          {savedIds.includes(pro.id) ? "❤️" : "🤍"}
+                        </Button>
+                        <Button variant="primary" style={{ flexGrow: 1 }} onClick={() => handleOpenContact(pro)}>
                           Contact Expert
                         </Button>
                       </div>

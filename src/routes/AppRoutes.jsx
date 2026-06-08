@@ -12,6 +12,8 @@ import Dashboard  from '../pages/Dashboard/Dashboard';
 import Profile    from '../pages/Dashboard/Profile';
 import Inquiries  from '../pages/Dashboard/Inquiries';
 import Settings   from '../pages/Dashboard/Settings';
+import SavedExperts from '../pages/Dashboard/SavedExperts';
+import Requirements from '../pages/Dashboard/Requirements';
 import { ROUTES } from '../constants/routes';
 
 const router = createBrowserRouter([
@@ -45,6 +47,8 @@ const router = createBrowserRouter([
       { index: true, element: <Dashboard /> },
       { path: 'profile', element: <Profile /> },
       { path: 'inquiries', element: <Inquiries /> },
+      { path: 'saved-experts', element: <SavedExperts /> },
+      { path: 'requirements', element: <Requirements /> },
       { path: 'settings', element: <Settings /> },
     ],
   },

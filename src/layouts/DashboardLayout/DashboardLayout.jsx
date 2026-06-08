@@ -19,14 +19,16 @@ const DashboardLayout = () => {
   const navItems = role === 'client' 
     ? [
         { icon: <HomeIcon size={18} />, label: 'Overview',        to: ROUTES.DASHBOARD },
-        { icon: <UserIcon size={18} />, label: 'Saved Experts',   to: ROUTES.DASHBOARD_PROFILE },
+        { icon: <UserIcon size={18} />, label: 'Saved Experts',   to: ROUTES.DASHBOARD_SAVED_EXPERTS },
         { icon: <MailIcon size={18} />, label: 'Sent Inquiries',  to: ROUTES.DASHBOARD_INQUIRIES },
+        { icon: <SettingsIcon size={18} />, label: 'Project Needs', to: ROUTES.DASHBOARD_REQUIREMENTS },
         { icon: <SettingsIcon size={18} />, label: 'Settings',      to: ROUTES.DASHBOARD_SETTINGS },
       ]
     : [
         { icon: <HomeIcon size={18} />, label: 'Overview',   to: ROUTES.DASHBOARD },
         { icon: <UserIcon size={18} />, label: 'My Profile', to: ROUTES.DASHBOARD_PROFILE },
         { icon: <MailIcon size={18} />, label: 'Inquiries',  to: ROUTES.DASHBOARD_INQUIRIES },
+        { icon: <SettingsIcon size={18} />, label: 'Browse Jobs', to: ROUTES.DASHBOARD_REQUIREMENTS },
         { icon: <SettingsIcon size={18} />, label: 'Settings',   to: ROUTES.DASHBOARD_SETTINGS },
       ];
 

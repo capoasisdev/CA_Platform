@@ -14,4 +14,6 @@ export const ROUTES = {
   DASHBOARD_PROFILE:  '/dashboard/profile',
   DASHBOARD_INQUIRIES:'/dashboard/inquiries',
   DASHBOARD_SETTINGS: '/dashboard/settings',
+  DASHBOARD_SAVED_EXPERTS: '/dashboard/saved-experts',
+  DASHBOARD_REQUIREMENTS: '/dashboard/requirements',
 };

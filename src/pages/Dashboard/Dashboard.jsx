@@ -44,8 +44,8 @@ const CLIENT_ACTIVITY = [
 
 const CLIENT_QUICK_ACTIONS = [
   { icon: <GlobeIcon size={18} />, label: 'Find a CA / CPA',      to: ROUTES.FIND_PROFESSIONALS },
-  { icon: <DocIcon size={18} />, label: 'Post Project Need',     to: ROUTES.CONTACT },
-  { icon: <UserIcon size={18} />, label: 'View Saved Experts',    to: ROUTES.DASHBOARD_PROFILE },
+  { icon: <DocIcon size={18} />, label: 'Post Project Need',     to: ROUTES.DASHBOARD_REQUIREMENTS },
+  { icon: <UserIcon size={18} />, label: 'View Saved Experts',    to: ROUTES.DASHBOARD_SAVED_EXPERTS },
   { icon: <SettingsIcon size={18} />, label: 'Update Settings',      to: ROUTES.DASHBOARD_SETTINGS },
 ];
 
