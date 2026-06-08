@@ -166,11 +166,15 @@ const FindProfessionals = () => {
         .eq('role', 'professional');
       if (error) throw error;
       
-      if (data && data.length > 0) {
-        setProfessionals(data);
-      } else {
-        setProfessionals(FALLBACK_PROFESSIONALS);
-      }
+      const dbPros = data || [];
+      // Combine database records with fallback profiles (filtering out duplicates by ID)
+      const combined = [...dbPros];
+      FALLBACK_PROFESSIONALS.forEach((fallback) => {
+        if (!combined.some(p => p.id === fallback.id)) {
+          combined.push(fallback);
+        }
+      });
+      setProfessionals(combined);
     } catch (err) {
       console.warn('Failed to query Supabase profiles, loading fallback data:', err.message);
       setProfessionals(FALLBACK_PROFESSIONALS);
